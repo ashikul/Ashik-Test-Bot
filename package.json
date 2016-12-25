@@ -1,0 +1,24 @@
+{
+  "name": "ashiktestbot",
+  "version": "0.0.1",
+  "description": "microsoft bot framework test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashikul/Ashik-Test-Bot.git"
+  },
+  "author": "alam.ashikul@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashikul/Ashik-Test-Bot/issues"
+  },
+  "homepage": "https://github.com/ashikul/Ashik-Test-Bot#readme",
+  "dependencies": {
+    "botbuilder": "^3.4.4",
+    "restify": "^4.3.0"
+  }
+}
