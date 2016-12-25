@@ -13,6 +13,12 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
 
+//Direct to index.html web page
+server.get('/', restify.serveStatic({
+    directory: __dirname,
+    default: '/index.html'
+}));
+
 // Create chat bot
 var connector = new builder.ChatConnector({
     // appId: process.env.MICROSOFT_APP_ID,
