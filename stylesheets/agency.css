@@ -787,11 +787,11 @@ body {
 }
 
 .bg-image{
-  background-image: url('howdoeswork.jpg');
+  background-image: url('../images/homepage/howdoeswork.jpg');
 }
 
 .bg-image-2{
-  background-image: url('red_background.jpg');
+  background-image: url('../images/homepage/red_background.jpg');
 }
 
 h2
