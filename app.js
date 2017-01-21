@@ -23,8 +23,10 @@ server.get('/', restify.serveStatic({
 var connector = new builder.ChatConnector({
     // appId: process.env.MICROSOFT_APP_ID,
     // appPassword: process.env.MICROSOFT_APP_PASSWORD
-    appId: '4294e391-35cd-4546-86a5-12e25f577e7e',
-    appPassword: '1nH8UqiKVtSfJOK3W8vCtev'
+    // appId: '4294e391-35cd-4546-86a5-12e25f577e7e',
+    // appPassword: '1nH8UqiKVtSfJOK3W8vCtev'
+    appId: '',
+    appPassword: ''
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
@@ -32,6 +34,7 @@ server.post('/api/messages', connector.listen());
 //=========================================================
 // Bots Dialogs
 //=========================================================
+
 
 bot.dialog('/', function (session) {
     session.send("Hello World2");
