@@ -1,0 +1,155 @@
+    <!-- Begin Tabbed Report -->
+
+
+
+<!-- Pre Reoport Load Script Block  -->
+<script>
+
+  function initMap(){
+
+  	window.fenway = {lat: <%= @lot.latitude %>, lng: <%= @lot.longitude %>};
+    $(".map_lot").css("height", "350px");
+    maps = $(".map_lot")
+    maps.each(function(index, map) {
+    	$( "<p class='map_id' style='display:none;'>"+index+"</p>" ).insertAfter(map);
+	    	window['mapOptions'+index] = {
+	      zoom: 18,
+	      center: new google.maps.LatLng(<%= @lot.latitude %>, <%= @lot.longitude %>),
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+    	};
+    	window['map'+index] = new google.maps.Map(map,window['mapOptions'+index]);
+	    window['marker'+index] = new google.maps.Marker({
+	        position: {lat:<%= @lot.latitude %>,lng:<%= @lot.longitude %>},
+	        map: window['map'+index]
+	    });
+    });
+    setTimeout(
+  function()
+  {
+    var input = (document.getElementById('searchAddress'));
+    var autocomplete = new google.maps.places.Autocomplete(input, {
+    bounds: {east: -73.700009, north: 40.917577, west: -74.25909, south: 40.477399},
+    types: ['address']
+  });
+    autocomplete.addListener('place_changed', function() {
+    var place = autocomplete.getPlace();
+    $("#address-latitude").val(place.geometry.location.lat());
+    $("#address-longitude").val(place.geometry.location.lng());
+    $("#searchBlock").val("");
+    $("#searchLot").val("");
+    $("#search-by-address").submit();
+    //$("#address-latitude").val("");
+    //$("#address-longitude").val("");
+  });
+}, 500);
+
+
+
+  }
+  //$(document).ready(function(){
+  window.allowable = true ;
+  window.existing = true ;
+  //});
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  	var target = $(e.target).attr("href") // activated tab
+  	var map_id = $(target).find(".map_id").text();
+		if (target == '#existing-building' | target == '#location') {
+			drawPano(fenway.lat, fenway.lng);
+		}else{
+			google.maps.event.trigger(window["map"+map_id], "resize");
+  		window["map"+map_id].setCenter(new google.maps.LatLng(fenway));
+		}
+	});
+  $('#mainNav').css("display", "none");
+
+
+</script>
+
+<!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXowf7SzD7pOCxVAedY1RKIpmI--!--XV7q4&callback=initMap" async defer></script-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXowf7SzD7pOCxVAedY1RKIpmI--XV7q4&callback=initMap&libraries=geometry,places"></script>
+
+
+<!-- Pre Reoport Load Styleblock  -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  .h1, .h2, .h3, h1, h2, h3 {
+			    margin-top: 10px;
+			    margin-bottom: 10px;
+	}
+	element.style {height: 400px;}
+
+  section.report-tabs {padding: 0 0;}
+</style>
+
+
+    <section class="report-tabs" >
+
+    	<div class="container" >
+            <div id="breadcrumb-div" >
+              <%= render "reports/breadcrumb" %>
+            </div>
+    		<div class="row">
+    		  <div class="col-md-12 text-left">
+            <ul class="nav nav-tabs">
+
+					    <li class="active"><a data-toggle="tab" href="#allowable-building"><i class="fa fa-cubes icon-room" aria-hidden="true">
+					    </i>Allowable Building</a></li>
+
+					    <li><a data-toggle="tab" href="#stack-building"><i class="fa fa-list icon-room" aria-hidden="true">
+					  	</i>Stacking Plans</a></li>
+
+  					  <li><a data-toggle="tab" href="#existing-building"><i class="fa fa-building icon-room" aria-hidden="true">
+  					  </i>Existing Building</a></li>
+
+					  </ul>
+
+					<!-- 1st level Tabs Content -->
+					  <div class="tab-content ">
+					    <!-- Allowable Building Tab -->
+				   	 	  <%= render "navbar_side"%>
+
+					      <%= render "tab_allowable_building"%>
+					      <%= render "tab_stack_building"%>
+					      <%= render "tab_existing_building"%>
+          </div>
+		  </div> <!-- End col-md-12 -->
+		</div><!-- End row -->
+	</div><!-- End container -->
+     </section>
+
+
+<div class="modal fade" id="comments-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">All comments for this lot</h4>
+      </div>
+      <div class="modal-body">
+        There are no comments on this lot
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Post Reoport Load Script Block  -->
+<script>
+  //$('#reportNav').css("display", "none");
+
+
+</script>
+
+
+<iframe src="https://webchat.botframework.com/embed/AshikTestBot?s=zrfmzz0IiqA.cwA.T5Y.ywdW-HzFpCSvWSBEiLpu26SXjQftINFS2WKZRgD27Hc"
+        style="height: 502px; max-height: 502px;"></iframe>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
