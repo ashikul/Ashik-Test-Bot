@@ -19,14 +19,19 @@ server.get('/', restify.serveStatic({
     default: '/index.html'
 }));
 
+server.get('/home', restify.serveStatic({
+    directory: __dirname,
+    default: 'views/home.html'
+}));
+
 // Create chat bot
 var connector = new builder.ChatConnector({
     // appId: process.env.MICROSOFT_APP_ID,
     // appPassword: process.env.MICROSOFT_APP_PASSWORD
-    // appId: '4294e391-35cd-4546-86a5-12e25f577e7e',
-    // appPassword: '1nH8UqiKVtSfJOK3W8vCtev'
-    appId: '',
-    appPassword: ''
+    appId: 'e889783f-686c-423d-830f-023130abca47',
+    appPassword: 'LpzNuMvpV0oUVqns0x2VVZQ'
+    // appId: '',
+    // appPassword: ''
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
@@ -204,66 +209,63 @@ bot.dialog('/Load Info', [
 
 bot.dialog('/Auction', [
     function (session) {
-        session.send("You can pass a custom message to Prompts.choice() that will present the user with a carousel of cards to select from. Each card can even support multiple actions.");
 
         // Ask the user to select an item from a carousel.
         var msg = new builder.Message(session)
             .attachmentLayout(builder.AttachmentLayout.carousel)
             .attachments([
                 new builder.ThumbnailCard(session)
-                    .title("Space Needle")
-                    .subtitle("The Space Needle is an observation tower in Seattle, Washington, a landmark of the Pacific Northwest, and an icon of Seattle.")
+                    .title("Item 1")
                     .images([
-                        builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/320px-Seattlenighttimequeenanne.jpg")
-                            .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/800px-Seattlenighttimequeenanne.jpg")),
+                        builder.CardImage.create(session, "http://lorempixel.com/400/200/food/1")
+                            .tap(builder.CardAction.showImage(session, "http://lorempixel.com/400/200/food/1")),
                     ])
                     .buttons([
                         // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Wikipedia"),
-                        builder.CardAction.imBack(session, "select:100", "Select")
+                        builder.CardAction.imBack(session, "bid:1", "Select")
                     ]),
                 new builder.ThumbnailCard(session)
-                    .title("Pikes Place Market")
-                    .subtitle("Pike Place Market is a public market overlooking the Elliott Bay waterfront in Seattle, Washington, United States.")
+                    .title("Item 2")
                     .images([
-                        builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/PikePlaceMarket.jpg/320px-PikePlaceMarket.jpg")
-                            .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/PikePlaceMarket.jpg/800px-PikePlaceMarket.jpg")),
+                        builder.CardImage.create(session, "http://lorempixel.com/400/200/food/3")
+                            .tap(builder.CardAction.showImage(session, "http://lorempixel.com/400/200/food/3")),
                     ])
                     .buttons([
-                        builder.CardAction.imBack(session, "select:101", "Select")
+                        builder.CardAction.imBack(session, "bid:2", "Select")
                     ]),
                 new builder.ThumbnailCard(session)
-                    .title("EMP Museum")
-                    .subtitle("EMP Musem is a leading-edge nonprofit museum, dedicated to the ideas and risk-taking that fuel contemporary popular culture.")
+                    .title("Item 3")
                     .images([
-                        builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Night_Exterior_EMP.jpg/320px-Night_Exterior_EMP.jpg")
-                            .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Night_Exterior_EMP.jpg/800px-Night_Exterior_EMP.jpg"))
+                        builder.CardImage.create(session, "http://lorempixel.com/400/200/food/5")
+                            .tap(builder.CardAction.showImage(session, "http://lorempixel.com/400/200/food/5"))
                     ])
                     .buttons([
-                        builder.CardAction.imBack(session, "select:102", "Select")
+                        builder.CardAction.imBack(session, "bid:3", "Select")
                     ])
             ]);
-        builder.Prompts.choice(session, msg, "select:100|select:101|select:102");
+        builder.Prompts.choice(session, msg, "bid:1|bid:2|bid:3");
     },
     function (session, results) {
-        var action, item;
-        var kvPair = results.response.entity.split(':');
-        switch (kvPair[0]) {
-            case 'select':
-                action = 'selected';
-                break;
-        }
-        switch (kvPair[1]) {
-            case '100':
-                item = "the Space Needle";
-                break;
-            case '101':
-                item = "Pikes Place Market";
-                break;
-            case '102':
-                item = "the EMP Museum";
-                break;
-        }
-        session.endDialog('You %s "%s"', action, item);
+        // var action, item;
+        // var kvPair = results.response.entity.split(':');
+        // switch (kvPair[0]) {
+        //     case 'select':
+        //         action = 'selected';
+        //         break;
+        // }
+        // switch (kvPair[1]) {
+        //     case '100':
+        //         item = "the Space Needle";
+        //         break;
+        //     case '101':
+        //         item = "Pikes Place Market";
+        //         break;
+        //     case '102':
+        //         item = "the EMP Museum";
+        //         break;
+        // }
+        // session.endDialog('You %s "%s"', action, item);
+        session.endDialog("Bidding Info Coming Soon");
     }
 ]);
 
