@@ -21,7 +21,7 @@ server.get('/', restify.serveStatic({
 
 server.get('/home', restify.serveStatic({
     directory: __dirname,
-    default: 'views/home.html'
+    default: '/views/home.html'
 }));
 
 // Create chat bot
