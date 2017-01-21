@@ -37,5 +37,5 @@ server.post('/api/messages', connector.listen());
 
 
 bot.dialog('/', function (session) {
-    session.send("Hello");
+    session.send("Hello123");
 });
