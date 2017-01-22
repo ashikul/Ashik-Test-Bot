@@ -77,7 +77,7 @@ bot.dialog('/', [
 
 bot.dialog('/menu', [
     function (session) {
-        builder.Prompts.choice(session, "We're excited to be of service to you", "Barage Cargo|Futures Auction|Quit");
+        builder.Prompts.choice(session, "We're excited to be of service to you", "Barge Cargo|Futures Auction|Quit");
     },
     function (session, results) {
         if (results.response && results.response.entity != 'Quit') {
@@ -100,7 +100,7 @@ bot.dialog('/menu', [
 //     }
 // ]);
 
-bot.dialog('/Barage Cargo', [
+bot.dialog('/Barge Cargo', [
     function (session) {
         // session.send("Welcome");
         builder.Prompts.text(session, "Please enter vessel ID");
@@ -112,7 +112,7 @@ bot.dialog('/Barage Cargo', [
     function (session, results) {
         // session.send("You entered '%s'", results.response);
         // var arrival = new moment(something).add(10, 'm').toDate();
-        session.send("Barrage Cargo Info: \n\n Pier# 6  \n\n  Dock Location: 3  \n\n \n\n Time Window \n\n  Open: 8AM  \n\n Close: 9PM \n\n Scheduled Arrival Time: Jan 22 - 5:00 PM EST"
+        session.send("Barge Cargo Info: \n\n Pier# 6  \n\n  Dock Location: 3  \n\n \n\n Time Window \n\n  Open: 8AM  \n\n Close: 9PM \n\n Scheduled Arrival Time: Jan 22 - 5:00 PM EST"
         );
         // builder.Prompts.choice(session, "Prompts.choice()\n\nChoose a list style (the default is auto.)", "auto|inline|list|button|none");
         session.endDialog();
