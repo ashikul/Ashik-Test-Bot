@@ -77,7 +77,7 @@ bot.dialog('/', [
 
 bot.dialog('/menu', [
     function (session) {
-        builder.Prompts.choice(session, "We're excited to be of service to you", "Barrage Cargo|Futures Auction|Quit");
+        builder.Prompts.choice(session, "We're excited to be of service to you", "Barage Cargo|Futures Auction|Quit");
     },
     function (session, results) {
         if (results.response && results.response.entity != 'Quit') {
@@ -100,7 +100,7 @@ bot.dialog('/menu', [
 //     }
 // ]);
 
-bot.dialog('/Barrage Cargo', [
+bot.dialog('/Barage Cargo', [
     function (session) {
         // session.send("Welcome");
         builder.Prompts.text(session, "Please enter vessel ID");
