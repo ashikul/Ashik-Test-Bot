@@ -73,7 +73,7 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #089ed1; /*#fec503;*/
+  background-color: #089ed1; /*#629632;*/
   border-color: #089ed1;
 }
 .btn-primary:active,
@@ -106,8 +106,8 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-xl {
   color: white;
-  background-color: #4bc3ec; /*#fed136;*/
-  border-color: #4bc3ec; /*#fed136;*/
+  background-color: #4bc3ec; /*#0198E1;*/
+  border-color: #4bc3ec; /*#0198E1;*/
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -122,8 +122,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: white;
-  background-color: #40a6c9; /*#fec503;*/
-  border-color: #40a6c9; /*#f6bf01;*/
+  background-color: #40a6c9; /*#629632;*/
+  border-color: #40a6c9; /*#629632;*/
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -145,11 +145,11 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #0198E1;
+  border-color: #0198E1;
 }
 .btn-xl .badge {
-  color: #fed136;
+  color: #0198E1;
   background-color: white;
 }
 .navbar-custom {
@@ -157,21 +157,21 @@ fieldset[disabled] .btn-xl.active {
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
-  color: #fed136;
+  color: #0198E1;
   font-family: "PT Sans", "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #fec503;
+  color: #629632;
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
 }
 
 .navbar-custom .navbar-toggle {
-  background-color: #4bc3ec; /*#fed136;*/
+  background-color: #4bc3ec; /*#0198E1;*/
   border-color: #4bc3ec;
   font-family: "PT Sans", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -180,7 +180,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #4bc3ec; /*#fed136;*/
+  background-color: #4bc3ec; /*#0198E1;*/
 }
 .navbar-custom .nav li a {
   font-family: "PT Sans", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -202,7 +202,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
   color: #575757; /*white;*/
-  background-color: #fec503;
+  background-color: #629632;
 }
 
 
@@ -494,7 +494,7 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #6AC2E8; /*#fed136;*/
+  background-color: #6AC2E8; /*#0198E1;*/
   color: white;
   border-radius: 100%;
   border: 7px solid #f1f1f1;
@@ -653,7 +653,7 @@ section#contact .form-group textarea.form-control {
   height: 236px;
 }
 section#contact .form-control:focus {
-  border-color: #fed136;
+  border-color: #0198E1;
   box-shadow: none;
 }
 section#contact ::-webkit-input-placeholder {
@@ -736,11 +736,11 @@ ul.social-buttons li a:active {
 }
 ::-moz-selection {
   text-shadow: none;
-  background: #fed136;
+  background: #0198E1;
 }
 ::selection {
   text-shadow: none;
-  background: #fed136;
+  background: #0198E1;
 }
 img::selection {
   background: transparent;
@@ -749,7 +749,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #fed136;
+  webkit-tap-highlight-color: #0198E1;
 }
 
 /*CUSTOM*/

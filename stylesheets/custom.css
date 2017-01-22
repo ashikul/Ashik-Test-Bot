@@ -41,7 +41,7 @@
 }
 
 .btn-blue-dark{
-  background-color: #089ed1; /*#fec503;*/
+  background-color: #089ed1; /*#629632;*/
   border-color: #089ed1;
   color: #fff;
 }
@@ -52,7 +52,7 @@
 .btn-blue-dark.active,
 .open .dropdown-toggle.btn-blue-dark {
   color: #fff;
-  background-color: #089ed1; /*#fec503;*/
+  background-color: #089ed1; /*#629632;*/
   border-color: #089ed1;
 }
 
