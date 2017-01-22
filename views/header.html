@@ -1,0 +1,71 @@
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid navbar-inner">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="/">Home</a>
+          <a href="/about">About Us</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+      <!-- <a class="navbar-brand page-scroll" href="#page-top">>Zoner</a> -->
+      <!--a href="index.html"><img src="img/zoner-logo.png"></a-->
+      <a href="<%= current_user.nil? ? "/" : "/searches/lots" %>"><%= image_tag "zoner-logo.png" if !params[:debug] %></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to('Search lot', "/searches/lots")  %>
+          </li>
+          <li>
+            <a class="dropdown-toggle page-scroll user-menu" type="button" data-toggle="dropdown">
+              <i class="fa fa-user" aria-hidden="true" style="padding-right:5px;"></i>
+              <%= current_user.email %>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown-menu" style="text-transform: capitalize">
+              <li><%= link_to 'Change password', edit_user_registration_path %></li>
+              <li><%= link_to 'Update information', edit_account_path(current_user.account.id) %></li>
+              <li><%= link_to 'My reports', user_my_reports_path(current_user.id) %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          </li>
+          <li>
+            <a class="page-scrooll">
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="hamburguer">&#9776;</span>
+            </a>
+          </li>
+        <% else %>
+          <li>
+          <div class="text-right">
+            <%= link_to new_user_session_path, :class => "page-scroll" do %>
+              <span class="login-button btn-xs">LOGIN</a></span>
+            <% end %>
+            <%= link_to new_user_registration_path, :class => "page-scroll" do %>
+              <span class="signup-button btn-xs">SIGN UP</a></span>
+            <% end %>
+            <a class="page-scrooll">
+              <span style="font-size:40px;cursor:pointer" onclick="openNav()" class="hamburguer">&#9776;</span>
+            </a>
+          </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+      <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
