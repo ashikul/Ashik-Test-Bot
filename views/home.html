@@ -6,13 +6,30 @@
 <!doctype html>
 <html>
 <head>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
 	<marquee>Welcome to HPSS!</marquee>
 	<title>Hunts Point Seaport & Shipyard, LLC
 	</title>
+
 	
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+	
+	<div id="header"></div>
+	
+    <script> 
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+    </script>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hunts Point Seaport & Shipyard, LLC
+</title>
+
 	<h1 style="text-align: center;">Hunts Point Seaport & Shipyard, LLC</h1> <!-- I centered this. -->
 	<h2 style="text-align: center;">Land & Maritime Multi-Use Development</h2> <!-- I centered this. -->
 	<!-- <img src="http://www.seahawk.com.ph/images/Ship.gif" style="margin-left: 450px;"> -->
@@ -42,10 +59,37 @@
 			<a href="/users/sign_up" class="page-scroll btn btn-xl tryHPSS Imode">Signup/Free to Use</a>
 		</div>
 
+
+	    <!-- Header with Background Video -->
+	    <div class="header-container">
+
+	      <!-- <div id="video_overlays"></div> -->
+	      <div class="hidden-xs hidden-sm">
+	     <!--video preload ="true" autoplay ="autoplay" loop="loop" muted poster ="pic.jpg"-->
+	     <source src="../videos/HPSSvid01.mp4" type="video/mp4">
+	     <!-- <%= video_tag "HPSS Imode.mp4", preload: true , autoplay: true , poster: "pic.jpg", loop: true , muted: true, class:"video-background" %> -->
+	     <!--/video--> <!--end of video -->
+	     </div>
+	     <div class="visible-xs visible-sm">
+			 <!--/video placeholder-->
+	     </div>
+	     <div class="intro-text text-center">
+	        <div class="intro-heading">Intermodal Barge Shipping made easy</div>
+	        <div class="intro-lead-in">
+	           Get to market fast!  North American barge infrastructure reborn!  
+			   
+			   Visualize your project in 3D in relationship to a 3D urban map - all the opportunities and constraints of any lot - with one simple query.
+	       </div>
+
+	   <a href="/users/sign_up" class="page-scroll btn btn-xl tryHPSS Imode">Signup/Free to Use</a>
+	</div>
+
+
 	</div> <!-- end of header container -->
 
 	<!-- What is HPSS Imode Section -->
 	<section id="services" class="overlays">
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 text-center"></div>
@@ -65,6 +109,28 @@
 				</div>
 			</div>
 		</div>
+
+	    <div class="container">
+	        <div class="row">
+	           <div class="col-lg-3 text-center"></div>
+	           <div class="col-lg-6 text-center">
+	            <h2 class="section-heading">What is Hunts Point Seaport and Shipyard (HPSS)?</h2>
+	            <h3 class="section-subheading">
+	               Fresh produce, fresh fish straight to market in a few easy steps!
+	           </h3>
+
+	       </div>
+	       <div class="col-lg-3 text-center"></div>
+	       <div class="col-lg-12 text-center">
+	           <!--img src="img/HPSS Imode-app-browser.png"-->
+	           <!-- <#%= image_tag "HPSS Imode-app-browser.png" %> -->
+	           <img src ="../images/gifs/zoner_action_161104-2.gif">
+	     	  <source src="../videos/HPSSvid01.mp4" type="video/mp4">
+
+	       </div>
+	   </div>
+	</div>
+
 	</section>
 
 	<!-- What Can HPSS Imode do for you -->
@@ -93,6 +159,7 @@
 
 	<!-- How does HPSS Imode work -->
 	<section id="whatisdoes" class="bg-image">
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 text-left">
@@ -170,6 +237,86 @@
 
 			</div>
 		</div>
+
+	    <div class="container">
+	        <div class="row">
+	           <div class="col-lg-3 text-left">
+	              <h2 class="section-heading text-white">How HPSS Imode Works...</h2>
+	              <h3 class="section-subheading text-white">HPSS Intermodal instantly delivers all the on board product information for your market, clearly illustrating strategic points necessary for fresh delivery.</h3>
+				  <h3 class="section-subheading text-white">HPSS is the simple solution for New York barge and fresh produce distribution.
+	 </h3>
+
+				<h3 class="section-subheading text-white">Fresh produce and seafood distribution bottlnecks removed with HPSS Intermodal.  Improved waterfront.  Reducing carbon emmissions diverting traffic from Bruckner Expressway.  Reduce parking adding more water access to the community. Communicate with intermodal teams at sea, in trucks, or on rail.  HPSS combines new jobs with no union labor wages, and more efficient sea transport! 
+	</h3>
+	          </div>
+	          <div class="col-lg-9 text-center" style="background-color:#fff; padding: 50px 30px 30px 30px;">
+	              <div class="row">
+	                 <div class="col-lg-4 text-left feature-item">
+	                    <!--img src="img/icon-1.png"-->
+			           <img src ="../images/homepage/HPSS-icon-w-text.png">
+	                    <h6 class="feature-title">Maxium bulk shipments, manifest accuracy</h6>
+	                    <p class="feature-description">Instantly view the total cargo, container number of units, number of containers, number of buyers, and more. HPSS Imode delivers comparable marketplace analysis accurately and fast for the discreet shipping distribution decision making process.</p>
+					<p class="feature-description">The HPSS Imode team is currently structuring its databases of shipping and transport market trends and Port Authority standards in order to deliver relative analytical and comparable cost analysis.  </p>
+	                </div>
+	                <div class="col-lg-4 text-left feature-item">
+	                 <!--img src="img/icon-2.png"-->
+	                 <img src="../images/icons/traffic-light.png">
+					 
+	                 <h6 class="feature-title">Shipping regulation, and restrictions easily explained</h6>
+	                 <p class="feature-description">Port docking and registration procedures.  </p><p class="feature-description">HPSS Imode efficiently communicates geospacial relationships for seaport customers. </p>
+
+	             </div>
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/grapes-icon.png">
+	                 <h6 class="feature-title">Perissible cargo never sits still</h6>
+	                 <p class="feature-description">Sealess movement of goods guided by smart technologies that penetrate the marketplace before sea to land transfer.   </p>
+						 <p class="feature-description">HPSS Imode assists communication of marketplace pricing prior to port arrivals.  HPSS Imode breaks shipment starts and estimated delivery times so all stackholders can know when at the time they need to know.</p>
+	             </div>
+	         </div>
+	         <div class="row">
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/greens-icon.png">
+	                 <h6 class="feature-title">Recursive distribution of goods</h6>
+	                 <p class="feature-description">Eating peas with carrots is more fun then eating just carrots.  HPSS Imode technology assists the distribution of goods recursively from the table of diverse foods to the truck palettes.   </p>
+						 <p class="feature-description">HPSS Imode helps teams visualize and understand the contextual relationships in an easy to your retrievable business to business networking system.</p>
+	             </div>
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/lettuce-icon.png">
+	                 <h6 class="feature-title">Live Automated Auctions</h6>
+	                 <p class="feature-description">HPSS Imode comunication sells goods before the port is reached.   </p>
+				<p class="feature-description">Substantial benefits maximized through efficient distribution to the customer with higher quality goods in less time.</p>
+	             </div>
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/trumpet.png">
+	                 <h6 class="feature-title">Announcements that change the market place</h6>
+	                 <p class="feature-description">With HPSS Imode complicated decisions are resolved in transport.    </p>
+					 <p class="feature-description"></p>
+	             </div>
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/open-book.png">
+	                 <h6 class="feature-title">High Union labor costs avoided</h6>
+	                 <p class="feature-description">The Bronx HPSS is outside the juridiction of New York therfore allowing the customers benefits from this geographic limits on labor laws.  </p>
+					 <p class="feature-description">HPSS Imode assists in communication between sea and land.</p>
+	             </div>
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/grapes-icon.png">
+	                 <h6 class="feature-title">Explore stretgic realationships and opportunities</h6>
+	                 <p class="feature-description">Rapidly view the futures markets and the data about goods and services.  </p>
+					 <p class="feature-description">The HPSS Imode platform eases team comminicaations greatly enhancing  desicion making among the whole team in an marvelous business to business network.</p>
+	             </div>
+	             <div class="col-lg-4 text-left feature-item">
+	                 <img src="../images/icons/fish-icon-48x71.png">
+	                 <h6 class="feature-title">Fresh Fish deliveries on time</h6>
+	                 <p class="feature-description">HPSS Imode allows customers to rapidly simulate docking procedures and gather port work force.    </p>
+					 <p class="feature-description">HPSS Imode comminicates contextual relationships in 2 dimensional maps, as well as 3D mapping interface with the chat bot.</p>
+	             </div>
+
+	         </div>
+	     </div>
+
+	 </div>
+	</div>
+
 	</section>
 
 
