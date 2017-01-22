@@ -1,0 +1,14 @@
+0, 10.5
+New York Metroplitan Region...
+
+10.5, 20
+..and the South East Bronx that is overcrowded with industrial and trucking
+
+20, 30
+Overcrowded highways exhausting hazardous CO2 emissions pass through the Bronx
+
+30, 40
+Improving barge traffic will reduce CO2 emissions and increase community access to the open space and waterways
+
+40, 60
+Efficient distribution of fresh produce improved through technically improved barge navigation control
