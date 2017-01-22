@@ -13,7 +13,6 @@ select part
 then
 
 get picture + stats + description(DIL depth images)
-
 then
 
 they can bid, next, buy,
