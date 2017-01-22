@@ -20,8 +20,9 @@ server.get('/', restify.serveStatic({
 }));
 
 server.get('/home', restify.serveStatic({
-    directory: __dirname,
-    default: '/views/home.html'
+    directory: 'views',
+    default: '/home.html'
+
 }));
 
 // Create chat bot
@@ -67,6 +68,7 @@ bot.dialog('/', [
     //     session.beginDialog('/help');
     // },
     function (session, results) {
+
         // Display menu
         session.beginDialog('/menu');
     },
@@ -78,7 +80,7 @@ bot.dialog('/', [
 
 bot.dialog('/menu', [
     function (session) {
-        builder.Prompts.choice(session, "How can Hunts Point adviser help you?", "Load Info|Auction|Quit");
+        builder.Prompts.choice(session, "We're excited to be of service to you", "Load Info|Auction|Quit");
     },
     function (session, results) {
         if (results.response && results.response.entity != 'Quit') {
@@ -104,11 +106,11 @@ bot.dialog('/menu', [
 bot.dialog('/Load Info', [
     function (session) {
         // session.send("Welcome");
-        builder.Prompts.text(session, "Enter Ship ID");
+        builder.Prompts.text(session, "Please enter ship ID");
     },
     function (session, results) {
         // session.send("You entered '%s'", results.response);
-        builder.Prompts.number(session, "Enter Manifest");
+        builder.Prompts.number(session, "Please enter manifest");
     },
     function (session, results) {
         // session.send("You entered '%s'", results.response);

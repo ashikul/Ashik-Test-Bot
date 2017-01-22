@@ -63,3 +63,11 @@ Secret Keys
 7V6le79QaVA.cwA.nJ8.uY25t5FYpdp8RMCjITzbLFjQZ5JlSkWmAgl5cmyrus4
 
 <iframe src='https://webchat.botframework.com/embed/HuntsPoint?s=7V6le79QaVA.cwA.nJ8.uY25t5FYpdp8RMCjITzbLFjQZ5JlSkWmAgl5cmyrus4'></iframe>
+
+Slack
+
+ID
+5195345285.130071142913
+
+Secret
+ad054873ce716a86f369651ceda720ea    
