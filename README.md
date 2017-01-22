@@ -55,7 +55,6 @@ LpzNuMvpV0oUVqns0x2VVZQ
 Test connection
 curl -k -X POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token -d "grant_type=client_credentials&client_id=4294e391-35cd-4546-86a5-12e25f577e7e&client_secret=1nH8UqiKVtSfJOK3W8vCtev&scope=https%3A%2F%2Fapi.botframework.com%2F.default"
 
-
 Secret Keys
 
 7V6le79QaVA.cwA.lTQ.09qSUNChZLrlIkvSsSn1IiaNgQP0PD8CZR_AV_D8YyE
