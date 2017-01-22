@@ -1,8 +1,7 @@
-//EXAMPLE AND DRAFT
+
 
 var restify = require('restify');
 var builder = require('botbuilder');
-
 //=========================================================
 // Bot Setup
 //=========================================================
@@ -13,16 +12,11 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
 
+
 //Direct to index.html web page
 server.get('/', restify.serveStatic({
     directory: __dirname,
-    default: '/index.html'
-}));
-
-server.get('/home', restify.serveStatic({
-    directory: './views',
-    default: 'home.html'
-
+    default: 'index.html'
 }));
 
 // Create chat bot
@@ -52,6 +46,9 @@ bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
 // bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
+// bot.send("Welcome to Hunts Point")
+
+// bot.beginDialog("Welcome to Hunts Point");
 
 bot.dialog('/', [
     // function (session) {
@@ -80,7 +77,7 @@ bot.dialog('/', [
 
 bot.dialog('/menu', [
     function (session) {
-        builder.Prompts.choice(session, "We're excited to be of service to you", "Load Info|Auction|Quit");
+        builder.Prompts.choice(session, "We're excited to be of service to you", "Barrage Cargo|Futures Auction|Quit");
     },
     function (session, results) {
         if (results.response && results.response.entity != 'Quit') {
@@ -103,18 +100,20 @@ bot.dialog('/menu', [
 //     }
 // ]);
 
-bot.dialog('/Load Info', [
+bot.dialog('/Barrage Cargo', [
     function (session) {
         // session.send("Welcome");
-        builder.Prompts.text(session, "Please enter ship ID");
+        builder.Prompts.text(session, "Please enter vessel ID");
     },
     function (session, results) {
         // session.send("You entered '%s'", results.response);
-        builder.Prompts.number(session, "Please enter manifest");
+        builder.Prompts.number(session, "Please enter manifest ID");
     },
     function (session, results) {
         // session.send("You entered '%s'", results.response);
-        session.send("Load at: \n\n Pier#6  \n\n  Dock#3  \n\n Open:8AM  \n\n Close:9PM");
+        // var arrival = new moment(something).add(10, 'm').toDate();
+        session.send("Barrage Cargo Info: \n\n Pier# 6  \n\n  Dock Location: 3  \n\n \n\n Time Window \n\n  Open: 8AM  \n\n Close: 9PM \n\n Scheduled Arrival Time: Jan 22 - 5:00 PM EST"
+        );
         // builder.Prompts.choice(session, "Prompts.choice()\n\nChoose a list style (the default is auto.)", "auto|inline|list|button|none");
         session.endDialog();
     },
@@ -209,7 +208,7 @@ bot.dialog('/Load Info', [
 //     }
 // ]);
 
-bot.dialog('/Auction', [
+bot.dialog('/Futures Auction', [
     function (session) {
 
         // Ask the user to select an item from a carousel.
@@ -217,35 +216,35 @@ bot.dialog('/Auction', [
             .attachmentLayout(builder.AttachmentLayout.carousel)
             .attachments([
                 new builder.ThumbnailCard(session)
-                    .title("Item 1")
+                    .title("Auction Item 1")
                     .images([
                         builder.CardImage.create(session, "http://lorempixel.com/400/200/food/1")
                             .tap(builder.CardAction.showImage(session, "http://lorempixel.com/400/200/food/1")),
                     ])
                     .buttons([
                         // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Wikipedia"),
-                        builder.CardAction.imBack(session, "bid:1", "Select")
+                        builder.CardAction.imBack(session, "Bid Item 1 Selected", "Select")
                     ]),
                 new builder.ThumbnailCard(session)
-                    .title("Item 2")
+                    .title("Auction Item 2")
                     .images([
                         builder.CardImage.create(session, "http://lorempixel.com/400/200/food/3")
                             .tap(builder.CardAction.showImage(session, "http://lorempixel.com/400/200/food/3")),
                     ])
                     .buttons([
-                        builder.CardAction.imBack(session, "bid:2", "Select")
+                        builder.CardAction.imBack(session, "Bid Item 2 Selected", "Select")
                     ]),
                 new builder.ThumbnailCard(session)
-                    .title("Item 3")
+                    .title("Auction Item 3")
                     .images([
                         builder.CardImage.create(session, "http://lorempixel.com/400/200/food/5")
                             .tap(builder.CardAction.showImage(session, "http://lorempixel.com/400/200/food/5"))
                     ])
                     .buttons([
-                        builder.CardAction.imBack(session, "bid:3", "Select")
+                        builder.CardAction.imBack(session, "Bid Item 3 Selected", "Select")
                     ])
             ]);
-        builder.Prompts.choice(session, msg, "bid:1|bid:2|bid:3");
+        builder.Prompts.choice(session, msg, "Bid Item 1 Selected|Bid Item 2 Selected|Bid Item 3 Selected");
     },
     function (session, results) {
         // var action, item;
@@ -267,7 +266,7 @@ bot.dialog('/Auction', [
         //         break;
         // }
         // session.endDialog('You %s "%s"', action, item);
-        session.endDialog("Bidding Info Coming Soon");
+        session.endDialog("Bidding Transaction System Coming Soon");
     }
 ]);
 
