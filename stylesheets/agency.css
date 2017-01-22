@@ -52,7 +52,7 @@ h6 {
 }
 
 .bg-light-gray {
-  background: url('sketch-bg.png') bottom center;
+  background: url('../images/sketch-bg.png') bottom center;
   padding-top: 100px;
 }
 
