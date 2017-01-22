@@ -20,8 +20,8 @@ server.get('/', restify.serveStatic({
 }));
 
 server.get('/home', restify.serveStatic({
-    directory: 'views',
-    default: '/home.html'
+    directory: './views',
+    default: 'home.html'
 
 }));
 
