@@ -3,12 +3,17 @@
 }
 #myCarousel{
 	margin-top: 20px;
+	margin-left: 80px;
+	margin-right: 80px;
 	/*max-height: 500px;*/
 }
 .carousel-inner > .item {
 	height: 100%;
 	max-height: 600px;
 	width: 100%;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image: none
 }
 .intro-text{
 	padding: 0;
@@ -19,4 +24,11 @@
 }
 section h3.section-subheading{
 	margin-bottom: 0;
+}
+.signup-link{
+	margin-bottom: 15px;
+}
+.HPSSvid01-container{
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
